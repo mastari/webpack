@@ -5,7 +5,7 @@ module.exports = {
     devtool: 'eval',
     entry: [
         'webpack-dev-server/client?http://localhost:3000',
-        './src/index'
+        './src/index.js'
     ],
     output: {
         path: path.join(__dirname, 'dist'),
@@ -13,13 +13,10 @@ module.exports = {
         publicPath: '/static/'
     },
     plugins: [
-    
+
     ],
     module: {
-        loaders: [{
-            test: /\.js$/,
-            loaders: [],
-            include: path.join(__dirname, 'src')
-        }]
+        loaders: [  {test: /\.js$/ , loader:'babel-loader', exclude: '/node_modules/'},
+  {test: /\.jsx$/ , loader:'babel-loader', exclude: '/node_modules/'}]
     }
 }

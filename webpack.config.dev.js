@@ -13,10 +13,13 @@ module.exports = {
         publicPath: '/static/'
     },
     plugins: [
-
     ],
     module: {
-        loaders: [  {test: /\.js$/ , loader:'babel-loader', exclude: '/node_modules/'},
-  {test: /\.jsx$/ , loader:'babel-loader', exclude: '/node_modules/'}]
+        loaders: [  {test: /\.js$/ , 
+                        loaders:['babel-loader'],
+                        exclude: '/node_modules/'},
+                    {test: /\.jsx$/ , 
+                        loaders:['babel-loader'], 
+                        exclude: '/node_modules/'}]
     }
 }

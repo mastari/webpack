@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link, browserHistory } from 'react-router-dom'
+import SignIn from './SignIn'
 
 class App extends React.Component {
-    constructor() {
-        super();
-        this.state = {}
-    }
-
     render() {
-        return (
-        <div>
-            Wow this is sent to index.js and is displayed on index.html!
-        </div>
+        return(
+            <Router history={browserHistory} >
+                <div>
+                    <Route exact path="/" component={SignIn}/>
+                </div>
+            </Router>
         )
     }
 }
